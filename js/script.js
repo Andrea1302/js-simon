@@ -13,7 +13,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 // 5.3 Stampare in pagina i numeri indovinati se esistono.
 
 
-const container = document.getElementById("container");
+const containerNumeri = document.getElementById("contenitore_numeri");
 
 
 
@@ -31,5 +31,5 @@ while ( numeriRandom.length != 5 ){
 }
 console.log(numeriRandom);
 
-container.innerHTML += `${numeriRandom[0]}  ${numeriRandom[1]}  ${numeriRandom[2]}  ${numeriRandom[3]}  ${numeriRandom[4]}`
+containerNumeri.innerHTML += `${numeriRandom[0]} ${numeriRandom[1]}   ${numeriRandom[2]}   ${numeriRandom[3]}        ${numeriRandom[4]}`
 
