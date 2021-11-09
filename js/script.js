@@ -51,12 +51,13 @@ function miaFunzione() {
         if ( indovinati === false) {
             console.log("no");
         } else {
+            quantiNumeri++
             
             containerNumeri.innerHTML += `${numeriRicordati} `
-            quantiNumeri++
         }
         
     }
+    containerNumeri.innerHTML += `,hai indovinato ${quantiNumeri} numeri `
     if ( quantiNumeri === 0 ){
         containerNumeri.innerHTML = `
         Non hai indovinato nessun numero, allena la tua memoria ! `
