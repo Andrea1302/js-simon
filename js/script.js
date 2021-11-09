@@ -33,3 +33,35 @@ console.log(numeriRandom);
 
 containerNumeri.innerHTML += `${numeriRandom[0]} ${numeriRandom[1]}   ${numeriRandom[2]}   ${numeriRandom[3]}        ${numeriRandom[4]}`
 
+var timer = 0 ;
+
+let clock = setInterval (miaFunzione,1000)
+
+function miaFunzione() {
+
+    timer++
+    console.log(timer);
+    if ( timer === 4){
+        clearInterval(clock);
+        containerNumeri.innerHTML = "I numeri indovinati sono i seguenti :"
+        let quantiNumeri = 0
+        for ( let i = 0 ; i < numeriRandom.length; i++){
+           let numeriRicordati =  parseInt(prompt("Inserisci i numeri "));
+
+            let indovinati = numeriRandom.includes(numeriRicordati);
+           if ( indovinati === false) {
+               console.log("no");
+           } else {
+            //    let numeriIndovinati = numeriRicordati;
+               containerNumeri.innerHTML += `${numeriRicordati} `
+               quantiNumeri++
+           }
+           
+        }
+        if ( quantiNumeri === 0 ){
+            containerNumeri.innerHTML += `
+            Nemmeno uno, allena la tua memoria ! `
+        }
+
+    }
+}
