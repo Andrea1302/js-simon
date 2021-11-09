@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#container{
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container #contenitore_numeri{
+    width: 500px;
+    background-color: brown;
+    color: white;
+    padding: 20px ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    border-radius: 50px;
+}
+
+#ricorda{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* parte bonus  */
+#input_text{
+    margin: 0 20px;
+    width: 350px;
+}
+#invia{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border-style: none;
+}
