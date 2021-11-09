@@ -35,36 +35,30 @@ console.log(numeriRandom);
 containerNumeri.innerHTML += `${numeriRandom[0]} ${numeriRandom[1]}   ${numeriRandom[2]}   ${numeriRandom[3]}        ${numeriRandom[4]}`
 
 // timer di partenza 
-var timer = 0 ;
 
-
-let clock = setInterval(miaFunzione,1000);
+let clock = setTimeout (function() {
+    miaFunzione();
+}, 4000);
 
 function miaFunzione() {
+    containerNumeri.innerHTML = "I numeri indovinati sono i seguenti :"
+    let quantiNumeri = 0
+    for ( let i = 0 ; i < numeriRandom.length; i++){
+        
+        let numeriRicordati =  parseInt(prompt("Inserisci i numeri che ricordi( uno alla volta)"));
 
-    timer++
-    console.log(timer);
-    if ( timer === 4){
-        clearInterval(clock);
-        containerNumeri.innerHTML = "I numeri indovinati sono i seguenti :"
-        let quantiNumeri = 0
-        for ( let i = 0 ; i < numeriRandom.length; i++){
+        let indovinati = numeriRandom.includes(numeriRicordati);
+        if ( indovinati === false) {
+            console.log("no");
+        } else {
             
-           let numeriRicordati =  parseInt(prompt("Inserisci i numeri che ricordi( uno alla volta)"));
-
-            let indovinati = numeriRandom.includes(numeriRicordati);
-           if ( indovinati === false) {
-               console.log("no");
-           } else {
-               containerNumeri.innerHTML += `${numeriRicordati} `
-               quantiNumeri++
-           }
-           
+            containerNumeri.innerHTML += `${numeriRicordati} `
+            quantiNumeri++
         }
-        if ( quantiNumeri === 0 ){
-            containerNumeri.innerHTML = `
-            Non hai indovinato nessun numero, allena la tua memoria ! `
-        }
-
+        
+    }
+    if ( quantiNumeri === 0 ){
+        containerNumeri.innerHTML = `
+        Non hai indovinato nessun numero, allena la tua memoria ! `
     }
 }
